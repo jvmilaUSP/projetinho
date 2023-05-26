@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head >
+    <script src="https://kit.fontawesome.com/8fa71b5a9e.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <link rel="stylesheet" href="conteudoCss.css" type="text/css">
+    <link rel="stylesheet" href="NavCss.css" type="text/css">
+    <link rel="stylesheet" href="restaurante.css" type="text/css">
+    <link rel="stylesheet" href="NavJs.Js" type="text/js">
+    <link rel="stylesheet" href="lista.Js" type="text/js">
+    
+    <script src="NavJs.Js"></script>
+    <script src="lista.js"></script>
+    <style> 
+    .red {
+      color: rgb(169, 0, 0);
+    }
+  
+    .yellow {
+      color: rgb(235, 235, 0);
+    }
+  
+    .green {
+      color: rgb(0, 102, 0);
+    }
+
+    
+    
+    </style>
+</head>
+<body>
+
+    <div id="tudo">
+      <div id="esq" >    <!-- div esquerda so pra manter o bagulho alinhado  -->   
+      </div>  
+      <div id="meio" > 
+        <div id="conteudoTotal"> 
+        
+        <!-- Estrutura da Nav -->
+
+        <div class="nav"> <!-- Conteiner da Nav -->
+        
+        
+          <!-- BANNER PRINCIPAL-->
+            <div id="banner" class="banner">
+              <img src="jalotou.jpg" alt="aaa" height="100%"  >
+            </div>
+          <!-- BANNER PRINCIPAL-->
+          
+          
+  
+            <!-- Barra Primaria -->
+            
+            <div id="navPrincipal" class="navP"> <!-- Barra Ativa-->
+              <a class="navBtn" href="javascript:void(0)" onclick="mostrarNavS()" title="Mostrar Itens"><i >Menu</i></a> <!-- Botão de NavDrop -->
+              <a class="home" href="menuPrincipal.php">Home</a> <!-- Botão Home Permanente-->
+            </div>
+            
+  
+            <!--Barra Situacional-->
+            <div id="navSituacional" class="navS"> <!-- NavDrop Escondido -->
+              <!--Itens-->
+              <div id="subNavS" class="subNavS">
+                <button class="subNavBtnS">Início</a> 
+                <div class="subNavContS">
+                  <a href="#">Item 1.1</a>
+                  <a href="#">Item 1.2</a>
+                </div>
+              </div>
+              <div id="subNavS" class="subNavS">
+                <button class="subNavBtnS">Ofertas</a> 
+                <div class="subNavContS">
+                  <a href="#">Item 2.1</a>
+                  <a href="#">Item 2.2</a>
+                  <a href="#">Item 2.3</a>
+                </div>
+              </div>
+              <div id="subNavS" class="subNavS">
+                <button class="subNavBtnS">Catálogo</a> 
+                <div class="subNavContS">
+                  <a href="#">Item 3.1</a>
+                  <a href="#">Item 3.2</a>
+                  <a href="#">Item 3.3</a>
+                  <a href="#">Item 3.4</a>
+                </div>
+              </div>
+              <div id="subNavS" class="subNavS">
+                <button class="subNavBtnS">Perfil</a> 
+                <div class="subNavContS">
+                  <a href="#">Item 4.1</a>
+                  <a href="#">Item 4.2</a>
+                  <a href="#">Item 4.3</a>
+                  <a href="#">Item 4.4</a>
+                  <a href="#">Item 4.5</a>
+                </div>
+              </div>
+              <div id="subNavS" class="subNavS">
+                <button class="subNavBtnS">Minhas Requisições</a> 
+                <div class="subNavContS">
+                  <a href="#">Item 5.1</a>
+                  <a href="#">Item 5.2</a>
+                  <a href="#">Item 5.3</a>
+                  <a href="#">Item 5.4</a>
+                  <a href="#">Item 5.5</a>
+                  <a href="#">Item 5.6</a>
+                </div>
+              </div>
+  
+  
+  
+  
+              <!--/Itens-->
+            </div>
+          </div>
+        
+        <!-- /Estrutura da Nav -->
+
+    <div id="cad" class="cad">
+        
+            <h1>Shopping Butantã - restaurantes</h1>
+            
+              
+              
+              <div  class="login">
+                
+            
+              </div>
+            
+            <fieldset>
+              
+              <div  class="cadastro">
+                  <form form method="POST" name="filtros" enctype="multipart/form-data"> 
+
+                   <div class="divBuscaLinha">  
+                        <button class="botaoBranco" type="button"  >Filtros   </button>   
+                        <div class="divBusca">
+                            <input type="text" id="txtBusca" name="txtBusca" class="inputBusca" placeholder="Buscar..."/>
+                            <i style="padding-top:10px; padding-right:4px;" class="fas fa-search"></i>
+                        </div>  <br>
+
+                    </div>
+
+                    <div class="divBuscaLinha"> 
+                        <select id="andarSelect" name="andarSelect" class="select" > 
+                            <option value="">Selecione o andar</option>
+                            <option value="1andar">1 Andar</option>
+                            <option value="2andar">2 Andar</option>
+                            <option value="3andar">3 Andar</option>
+                        </select>
+                        
+                        <button type="submit">Limpar Filtro  </button>
+                        <button type="submit">Filtrar  </button>
+                    
+                    </div>
+                    
+
+
+                    </form>
+                       <br>
+                       <div id="1andar"> 
+                       <div class="inp"><h2>1 Andar</h2> </div>
+                       <fieldset> 
+                        
+                       <div class="blocorestaurante">
+                        <h1 class="restaurante">Outback</h1>
+                        <h1 class="indice numero" >5.4</h1>
+                        <div class="divdesc"><p>palavra chave: Comida Australiana, churrasco</p>  </div>
+                         
+                        <div class="divmenu"><a>Cardápio Digital</a></div>
+                        
+                        
+                        </div>
+                        <div class="blocorestaurante">
+                          <h1 class="restaurante">McDonalds</h1>
+                          <h1 class="indice numero" >7.4</h1>
+                          <div class="divdesc"><p>palavra chave: Fast-food</p>  </div>
+                           
+                          <div class="divmenu"><a>Cardápio Digital</a></div>
+                          
+                          
+                          </div>
+                          <div class="blocorestaurante">
+                            <h1 class="restaurante">Bacio de Lattee</h1>
+                            <h1 class="indice numero" >9.4</h1>
+                            <div class="divdesc"><p>palavra chave: Sorvete</p>  </div>
+                             
+                            <div class="divmenu"><a>Cardápio Digital</a></div>
+                            
+                            
+                            </div>
+                      </fieldset> </div>
+
+                      <!--  2 ANDAR-->
+                      <div id="2andar"> 
+                      <div class="inp"><h2>2 Andar</h2> </div>
+                       <fieldset> 
+                        
+                       <div class="blocorestaurante">
+                        <h1 class="restaurante">Outback</h1>
+                        <h1 class="indice numero" >5.4</h1>
+                        <div class="divdesc"><p>palavra chave: Comida Australiana, churrasco</p>  </div>
+                         
+                        <div class="divmenu"><a>Cardápio Digital</a></div>
+                        
+                        
+                        </div>
+                        <div class="blocorestaurante">
+                          <h1 class="restaurante">McDonalds</h1>
+                          <h1 class="indice numero" >7.4</h1>
+                          <div class="divdesc"><p>palavra chave: Fast-food</p>  </div>
+                           
+                          <div class="divmenu"><a>Cardápio Digital</a></div>
+                          
+                          
+                          </div>
+                          <div class="blocorestaurante">
+                            <h1 class="restaurante">Bacio de Lattee</h1>
+                            <h1 class="indice numero" >9.4</h1>
+                            <div class="divdesc"><p>palavra chave: Sorvete</p>  </div>
+                             
+                            <div class="divmenu"><a>Cardápio Digital</a></div>
+                            
+                            
+                            </div>
+                      </fieldset> </div>
+            
+            
+
+                  <br>
+
+              </div>
+            </fieldset>
+            <fieldset>
+             
+              
+            </fieldset>
+            
+            
+        
+          
+        
+            
+
+
+        </div>
+        
+        <div id="espaco"> </div>
+      </div>
+        
+      
+      <div class="dFooter">
+        <footer class="fFooter">
+          <div class="fT">
+            <div class="fLogo"> 
+              <img class="fImg" src="../imagens/inovakilogo.png"> 
+            </div>
+          </div>
+          
+
+          <div class="fC">
+            <div class="fColuna"> 
+              <ul class="fUl">
+                <li class="fLi">
+                  <a href="../frontend/viewSup.php" class="fDecA">Suporte</a>
+                </li>
+              </ul>    
+            </div>
+            
+            <div class="fColuna">
+              <ul class="fUl">
+                <li class="fLi">   
+                  <a href="../frontend/viewLojas.php" class="fDecA">Nossas lojas </a>         
+                </li>
+              </ul>
+            </div>
+          </div>
+        
+        </footer>
+      </div>
+      
+      
+
+    </div>
+
+    <div id="dir"  > </div>   
+    </div>
+
+
+    </div>
+
+
+<script>
+  var numeros = document.getElementsByClassName("numero");
+  
+  for (var i = 0; i < numeros.length; i++) {
+    var numeroElemento = numeros[i];
+    var numero = parseInt(numeroElemento.innerHTML);
+
+    if (numero > 8) {
+      numeroElemento.classList.add("red");
+    } else if (numero >= 6 && numero <= 8) {
+      numeroElemento.classList.add("yellow");
+    } else {
+      numeroElemento.classList.add("green");
+    }
+  }
+</script>
+    
+</body>
+
+
+
+  
+  
+  
+</html>
