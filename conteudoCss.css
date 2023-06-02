@@ -1,0 +1,366 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+canvas{
+    max-width: 90%;
+    max-height: 500px;
+    margin-left:40px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /* CONFIGURAÇÕES DAS TABELAS PARA MOSTRAR ITENS  */ 
+
+
+
+
+.catTable, .catTable2{
+    border: 2px solid black;
+}
+
+.tableContainer{
+    display: flex;
+    flex-wrap: wrap;
+}
+.tableContainer > *{
+    flex-basis: 100%;
+}
+
+
+
+
+.thtable{
+    color:white;
+    background-color: rgb(00, 64, 94);
+    border: 0px solid white;
+    min-width: 130px;
+    height: 40px;
+}
+
+
+
+.tdT{
+    color:black;
+    height: 35px;
+    text-align: center;
+}
+.tr1{
+    height: 35px;
+}
+
+
+
+.tr2{
+    height: 35px;
+    background-color: rgb(204, 202, 202);
+}
+
+
+.fa-times, .fa-plus-square, .fas{
+    font-size:140%;
+}
+.fa-times:hover, .fa-plus-square:hover {
+    font-size:170%;
+}
+
+
+
+
+
+
+.fLogo{
+    width: 100%;
+    text-align: center;
+}
+
+.fImg{
+    width: 40%;
+}
+
+/**/
+
+.fC{
+    text-align: center;
+}
+
+
+
+.fColuna{
+    position: relative;
+    text-align: center;
+    width: 49%;
+    display: inline-block;
+    margin: 0%;
+    box-sizing: border-box;
+
+}
+
+.fUl{
+    list-style-type: none;
+    text-align: center;
+    padding: 0%;
+}
+
+.fLi{
+    text-align: center;
+    padding: 0%;
+}
+
+/**/
+
+.fDecA{
+    color: white;
+    text-decoration:none;
+    font-weight: bold;
+}
+
+/**/
+
+@media screen and (max-width:1280px){
+    .fColuna{
+        width: 100%;
+    }
+}
+
+/* FIM DO FOOTER   */ 
+
+.dataDados{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: space-evenly;
+}
+.linhaDados{
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* BUSCAR   */ 
+
+  .divBuscaLinha{
+      display: flex;
+      height: 60px;
+      left:0px;
+      justify-content: flex-end;
+      align-items:center ;
+  }
+  .divBuscaLinha> select, .divBuscaLinha> button {
+      margin-left: 2%;
+      margin-right: 2%;
+
+  }
+  
+  
+  
+
+
+                                                                      /* BOTÕES */ 
+.botoes{   /* config das posições dos botões   */ 
+    display: flex;
+    margin-left: 0%;
+}
+
+.botaoBranco{
+    margin-left: 20px ;
+    margin-right: 20px;
+    background-color: #cecece;
+    color:black;
+    border: 1px solid black;
+}
+
+
+
+
+
+
+  .meioPai{  /*DIV pai quando for usar 2 ou mais colunas no meio  */ 
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+  .meioFilho{ /*DIV filho quando colocar dentro de um display flex PAI  */ 
+      width:44%;
+      min-height: 50px;
+      display:inline-block ;
+      margin:1%;
+      min-width: 380px;
+
+  }
+
+  .PaiDestaque{
+      display:flex;
+      flex-wrap: nowrap;
+      justify-content: space-around;
+      min-height: 350px;
+      max-height: 500px;
+  }
+
+  .FilhoDestaque{
+      width:45%;
+      min-height: 400px;
+      display: inline-block;
+      padding: 1.5%;
+  }
+  
+  
+  
+  .login, .cadastro {   
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width:100%;
+  }
+  .login >div, .cadastro >div >div {
+  display:block;
+  
+  align-items: center;
+  
+  }
+  .login >div, .cadastro >div, label {
+  width: 90%;
+  
+  }
+
+  .logdiv{
+    display:inline;
+    
+  }
+
+  .inp{   /* Cada div vai ter sua label e seu input exclusivo, e vai ter essa classe "inp"  */ 
+    margin-bottom: 20px;
+    width: 100%;
+    
+  }
+  .txtin > p, .txtin > h4{  /*Quando quiser usar várias linhas sem muito espaço, use o txtin  */ 
+    display:inline-block;
+}
+.txtin{
+    height: 40px;
+}
+  
+  
+  
+
+  .checkbox {   /* Classe dos input checkbox */ 
+  margin-bottom: 10px;
+  }
+  select,  .escolhaUnica {   /* escolhaUnica é a classe dos input radio   */ 
+  width: calc(100% + 26px);
+  padding: 5px 0;
+  display:inline-block
+  }
+  
+  
+  .escolhaUnica label {  
+  padding: 0 0px 0 0;
+  } 
+  .radio{
+    display:inline-block;
+  }
+  .divRadio{
+      display:inline-block;
+
+  }
+
+  
+  
+  .checkbox input  {
+  width: auto;
+  margin: -2px 10px 0 0;
+  }
+  .checkbox a {
+  color: #006494;;
+  }
+  .checkbox label{
+      width: auto;
+  }
+  .checkbox a:hover {
+  color: #006494;;
+  }
+  
+
+  .select{
+      width:220px;
+  }
+
+  .subTitulo{
+      color:rgb(112, 112, 112)
+  }
+
+
+
+
+  .login >input, .cadastro >input {
+    width: 100px; 
+  }
+@media screen and (max-width:1280px){      /*  RESPONSIVIDADE             */ 
+    div#esq{
+        visibility:hidden;
+        width:0%;
+    }
+    div#dir{
+        visibility:hidden;
+        width:0%;
+    }
+    div#meio{
+        width:100%;
+        left: 0%;
+    }
+    div#topoDoTopo{
+        width:100%;
+        left: 0%;
+    }
+    .login >div, .cadastro >div {
+  width: 60%;
+  }
+  
+  select, .escolhaUnica {
+  width: calc(60% + 16px);
+  }
+  .checkbox label, .radio label{
+      display:block;
+  }
+  .radioTitle label{
+      display:block;
+      padding: 12px;
+  }
+  .labelTitulo{
+    width: 100%;
+
+  }
+
+  .divRadio{
+    display:block;
+  }
+  div#cad{    /* div de cadastro    */ 
+    margin-left: 0;
+    
+}
+  
+  }
