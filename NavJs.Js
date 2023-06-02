@@ -24,11 +24,9 @@ window.onscroll = function(){
   
   if(posYInit<posYNow){
     document.getElementById("navPrincipal").style.transform = "translateY(0%)";
-    document.getElementById("navSituacional").style.transform = "translateY(0%)";
     document.getElementById("banner").style.transform = "translateY(-"+  9889.2/document.getElementById("banner").clientHeight.valueOf() +"%)";
   }else{
     document.getElementById("navPrincipal").style.transform = "translateY(+"+  9652.6/document.getElementById("navPrincipal").clientHeight.valueOf() +"%)";
-    document.getElementById("navSituacional").style.transform = "translateY(+"+  9652.6/document.getElementById("navSituacional").clientHeight.valueOf() +"%)";
     document.getElementById("banner").style.transform = "translateY(0%)";
 
   }
