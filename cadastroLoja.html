@@ -9,9 +9,10 @@
    
     <link rel="stylesheet" href="NavCss.css" type="text/css">
     <link rel="stylesheet" href="restaurante.css" type="text/css">
+    <link rel="stylesheet" href="tabela.css" type="text/css">
     <link rel="stylesheet" href="NavJs.Js" type="text/js">
     <link rel="stylesheet" href="lista.js" type="text/js">
-    <link rel="stylesheet" href="cpf.js" type="text/js">
+    <link rel="stylesheet" href="horario.js" type="text/js">
     <link rel="icon" href="jalotou.jpg" type="image/x-icon">
     <script src="NavJs.Js"></script>
     
@@ -57,11 +58,33 @@
                   <!-- NOME DO SERVIÇO  E SEU INPUT -->
                 <div class="formLinha"><label for="nomeRestaurante"  >Nome do Restaurante: </label><input type="text" name="nomeRestaurante" required id="nomeRestaurante" size=90></div>  <!-- NOME DO SERVIÇO  E SEU INPUT -->
                 <div class="formLinha"><label for="foto">Foto:</label><input id="foto" type="file" name="foto"       ></div>
-                <div class="formLinha"><label for="palavrachave"  >Palavras-chave: </label> <input type="text" name="palavrachave" required id="palavrachave" placeholder="Pizza, comida italiana.."  size=90> </div>
+                <div class="formLinha"><label for="palavrachave"  >Palavras-chave: </label> <select id="palavrachaveSelect" name="palavrachaveSelect" class="selectcad" > 
+                  <option value="0">Selecione</option>
+                  <option value="pizza">Pizza</option>
+                  <option value="hamburguer">hamburguer</option>
+                  <option value="cerveja">Cerveja</option>
+              </select> </div>
                 <div class="formLinha"><label for="foto">Descrição:</label></div>
                 <div class="formLinha"><textarea id="descricao" name="descricao" rows="7" cols="45" ></textarea></div> 
                 <div class="formLinha"><label for="linkcardapio"  >Link do Cardápio: </label><input type="text" name="linkcardapio" required id="linkcardapio" size="45"></div> 
-                <div class="formLinha"><label for="horario">Horário Funcionamento*</label><input type="text" name="horario" size="30"  required id="horario" s></div>       
+                <div class="formLinha"><label for="palavrachave"  >Palavras-chave: </label> <select id="diaSemanaSelect" name="diaSemanaSelect" class="selectcad" > 
+                  <option value="0">Selecione</option>
+                  <option value="seg">Segunda</option>
+                  <option value="ter">Terça</option>
+                  <option value="qua">Quarta</option>
+                  <option value="qui">Quinta</option>
+                  <option value="sex">Sexta</option>
+                  <option value="sab">Sábado</option>
+                  <option value="dom">Domingo</option>
+              </select> </div>       
+                <div class="formLinha"> <label for="horarioinicio">Horário Abertura: </label>  <input type="time" name="horarioinicio"   required id="horarioinicio" ></div>
+                <div class="formLinha"> <label for="horariofim">Horário Fechamento: </label>  <input type="time" name="horariofim"   required id="horariofim" > </div>
+                <div class="formLinha"><button type="button" onclick="adicionarHorario()"> Adicionar Horário</button> </div>
+                
+                <table id="tabelaHorarios" class="tabelaHorarios">
+                  <tr> <th class="dia">Dia</th> <th>Horário Abertura </th> <th>Horário Fechamento</th> <th>Excluir</th>  </tr> 
+                  <tr>  </tr>
+                </table>
                 <div class="botoes" >  
                     
                     <button type="submit" href="/">Cadastar </button>
@@ -82,7 +105,7 @@
 
 
     </div>
-
+<script src="horario.js"> </script>
     <div id="dir"  > </div>   
     </div>
 

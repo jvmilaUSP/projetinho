@@ -113,6 +113,9 @@
     .formLinha{
         padding-bottom: 20px;
         display: flex;
+        flex-wrap:nowrap  ;
+        width: 100%;
+        
     }
     
     .formLinha > label{
@@ -122,11 +125,19 @@
         
     }
     .formLinha > input{
-        width: 80%;;
+        width: 80%;
         padding: 5px;
         vertical-align: middle;
         size: 40;
         max-width: 310px;
+    }
+
+    .DivselectForm{
+        width: 80%;
+        padding: 5px;
+       
+        
+       
     }
 
 /*FOOTER*/
@@ -285,3 +296,5 @@ body, div, form, input, select {
 .botoes{
     display: flex;
 }
+
+
