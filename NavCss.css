@@ -20,6 +20,11 @@ display: block;
 transition: 0.3s;
 transform: translateY(214.5%);
 }
+.navEsquerda{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between
+}
 
 
 .navBtn{

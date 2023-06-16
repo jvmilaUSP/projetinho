@@ -5,21 +5,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Já Lotou?</title>
+    <title>Menu</title>
  
     <link rel="stylesheet" href="NavCss.css" type="text/css">
     <link rel="stylesheet" href="restaurante.css" type="text/css">
     <link rel="stylesheet" href="lista.css" type="text/css">
-    <link rel="stylesheet" href="tabela.css" type="text/css">
     <link rel="stylesheet" href="NavJs.Js" type="text/js">
     <link rel="stylesheet" href="lista.Js" type="text/js">
-    <link rel="stylesheet" href="buscaTabelaVisualizarLojas.Js" type="text/js">
     <link rel="icon" href="jalotou.jpg" type="image/x-icon">
     
     <script src="NavJs.Js"></script>
     
-    
+    <style> 
+    .red {
+      color: rgb(169, 0, 0);
+    }
+  
+    .yellow {
+      color: rgb(235, 235, 0);
+    }
+  
+    .green {
+      color: rgb(0, 102, 0);
+    }
 
+    
+    
+    </style>
 </head>
 <body>
 
@@ -32,16 +44,16 @@
         <!-- Estrutura da Nav -->
 
         <div class="nav"> <!-- Conteiner da Nav -->
-          <!-- BANNER PRINCIPAL-->
-            <div id="banner" class="banner">
-              <img src="jalotou.jpg"  height="100%"  >
-            </div>          
-            <div id="navPrincipal" class="navP"> <!-- Barra Ativa-->
-              <a class="home" href="menuPrincipal.php">Home</a> <!-- Botão Home Permanente-->
-              <div class="navEsquerda" ><div class="buscaGeral"><form method="POST" name="buscaShopping" enctype="multipart/form-data"> <input type="search" id="buscaGeral" name="buscaGeral" class="inputBuscaGeral" placeholder="Buscar shopping..."/> </form> </div>
-              <a class="home" href="menuPrincipal.php">Sair</a></div>
+            <!-- BANNER PRINCIPAL-->
+              <div id="banner" class="banner">
+                <img src="jalotou.jpg"  height="100%"  >
+              </div>          
+              <div id="navPrincipal" class="navP"> <!-- Barra Ativa-->
+                <a class="home" href="navegarcliente.html">Home</a> <!-- Botão Home Permanente-->
+                <div class="navEsquerda" ><div class="buscaGeral"><form method="POST" name="buscaShopping" enctype="multipart/form-data"> <input type="search" id="buscaGeral" name="buscaGeral" class="inputBuscaGeral" placeholder="Buscar shopping..."/> </form> </div>
+                <a class="home" href="menuPrincipal.php">Sair</a></div>
+              </div>
             </div>
-          </div>
         
         <!-- /Estrutura da Nav -->
 
@@ -58,19 +70,7 @@
               
                    
 
-
-
-                    <div class="tabela" >  
-                    <div class="iconeTabela"> <i class="fas fa-plus-square"></i> </div>
-                     
-                    <table id="tabelaMaiorAndar"class="tabelaMaiorAndar"> 
-                        <tr> <th>Andar</th>  <th>Excluir</th>  </tr>
-                        <tr> <td class="tituloAndar">1 Andar </td>  <td class="excluir">X</td></tr>
-                        <tr> <td class="tituloAndar">2 Andar </td>  <td class="excluir">X</td></tr>
-                        <tr> <td class="tituloAndar">3 Andar </td>  <td class="excluir">X</td></tr>
-                        <tr> <td class="tituloAndar">Subsolo </td>  <td class="excluir"><i class="fas fa-times"  ></i></td></tr>
-                    </table>
-                </div>
+                   
 
                     
 
@@ -79,16 +79,29 @@
 
 
                     
-                       
-                    
+                       <br>
+                       <div id="1andar" class="andar"> 
+                        
+                        
+                        
+                       <div class="blocorestaurante">
+                        <h1 class="restaurante"  > <a href="index.html" class="titleRestaurante" >Página Inicial </a>  </h1>
+                        </div>
+                        <div class="blocorestaurante">
+                            <h1 class="restaurante"  > <a href="visualizarAndar.html" class="titleRestaurante" >Tabela de Andares </a>  </h1>
+                            </div>
+                            <div class="blocorestaurante">
+                                <h1 class="restaurante"  > <a href="visualizarLojas.html" class="titleRestaurante" >Tabela de Restaurantes </a>  </h1>
+                                </div>
+                       </div>
 
                       <!--  2 ANDAR-->
-                      
+                     
                       
             
             
 
-                  
+                  <br>
 
               
             </fieldset>
@@ -125,7 +138,7 @@
     </div>
 
     <script src="lista.js"></script>
-    <script src="buscaTabelaVisualizarLojas.Js"></script>
+
     
 </body>
 

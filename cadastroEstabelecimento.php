@@ -1,3 +1,16 @@
+<?php 
+$servername = "localhost"; // nome do servidor (geralmente localhost)
+$username = "root"; // nome de usuário do banco de dados
+$password = ""; // senha do banco de dados
+$dbname = "bd"; // nome do banco de dados
+
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+
+// Verificar conexão
+if (!$conn) {
+    die("Falha na conexão: " . mysqli_connect_error());
+}
+?>
 <!DOCTYPE html>
 <html lang="PT-BR">
 <head >
@@ -47,7 +60,7 @@
             <fieldset>
               
             </fieldset>
-              <form method="POST" name="cadEstabelecimento" enctype="multipart/form-data" >
+              <form action="formcadEstabelecimento.php" method="POST" name="cadEstabelecimento" enctype="multipart/form-data" >
               <div  class="formulario">
                   <!-- NOME DO SERVIÇO  E SEU INPUT -->
                 <div class="formLinha"><label for="nome"  >Nome: </label><input type="text" name="nome" required id="nome" size=90></div>  <!-- NOME DO SERVIÇO  E SEU INPUT -->

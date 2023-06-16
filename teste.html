@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    /* Estilo básico para a barra de navegação */
+    ul.navbar {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      background-color: #f1f1f1;
+    }
+    
+    /* Estilo para os itens da barra de navegação */
+    ul.navbar li {
+      float: left;
+    }
+    
+    /* Estilo para os links na barra de navegação */
+    ul.navbar li a {
+      display: block;
+      color: #333;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+    
+    /* Estilo para os links quando o mouse passa sobre eles */
+    ul.navbar li a:hover {
+      background-color: #ddd;
+    }
+    
+    /* Estilo para o dropdown menu */
+    ul.navbar li .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+    
+    /* Estilo para a aba do dropdown menu quando o mouse passa sobre ela */
+    ul.navbar li:hover .dropdown-content {
+      display: block;
+    }
+    
+    /* Estilo para os itens dentro do dropdown menu */
+    ul.navbar li .dropdown-content a {
+      color: #333;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+    }
+    
+    /* Estilo para os itens do dropdown menu quando o mouse passa sobre eles */
+    ul.navbar li .dropdown-content a:hover {
+      background-color: #f1f1f1;
+    }
+  </style>
+</head>
+<body>
+  <ul class="navbar">
+    <li><a href="#">Página Inicial</a></li>
+    <li><a href="#">Sobre</a></li>
+    <li>
+      <a href="#">Serviços</a>
+      <div class="dropdown-content">
+        <a href="#">Serviço 1</a>
+        <a href="#">Serviço 2</a>
+        <a href="#">Serviço 3</a>
+      </div>
+    </li>
+    <li><a href="#">Contato</a></li>
+  </ul>
+</body>
+</html>
