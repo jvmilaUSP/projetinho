@@ -26,7 +26,7 @@ CREATE TABLE IF NOT EXISTS `estabelecimento` (
   `cnpj` VARCHAR(30) NOT NULL,
   `tel` VARCHAR(20) NOT NULL,
   PRIMARY KEY (`idestabelecimento`),
-  UNIQUE INDEX `idestabelecimento_UNIQUE` (`idestabelecimento` ASC) VISIBLE)
+  UNIQUE INDEX `idestabelecimento_UNIQUE` (`idestabelecimento` ASC) )
 ENGINE = InnoDB;
 
 
@@ -42,13 +42,12 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `cpf` VARCHAR(20) NOT NULL,
   `estabelecimento_idestabelecimento` INT,
   PRIMARY KEY (`idusuario`),
-  UNIQUE INDEX `idusuario_UNIQUE` (`idusuario` ASC) VISIBLE,
-  UNIQUE INDEX `login_UNIQUE` (`login` ASC) VISIBLE,
-  UNIQUE INDEX `senha_UNIQUE` (`senha` ASC) VISIBLE,
-  INDEX `fk_usuario_estabelecimento_idx` (`estabelecimento_idestabelecimento` ASC) VISIBLE,
+  UNIQUE INDEX `idusuario_UNIQUE` (`idusuario` ASC),
+  UNIQUE INDEX `login_UNIQUE` (`login` ASC),
+  INDEX `fk_usuario_estabelecimento_idx` (`estabelecimento_idestabelecimento` ASC),
   CONSTRAINT `fk_usuario_estabelecimento`
     FOREIGN KEY (`estabelecimento_idestabelecimento`)
-    REFERENCES `mydb`.`estabelecimento` (`idestabelecimento`)
+    REFERENCES `estabelecimento` (`idestabelecimento`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -61,12 +60,11 @@ CREATE TABLE IF NOT EXISTS `andar` (
   `idandar` INT NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(45) NOT NULL,
   `estabelecimento_idestabelecimento` INT NOT NULL,
-  PRIMARY KEY (`idandar`, `estabelecimento_idestabelecimento`),
-  UNIQUE INDEX `idandar_UNIQUE` (`idandar` ASC) VISIBLE,
-  INDEX `fk_andar_estabelecimento1_idx` (`estabelecimento_idestabelecimento` ASC) VISIBLE,
+  PRIMARY KEY (`idandar`),
+  INDEX `fk_andar_estabelecimento1_idx` (`estabelecimento_idestabelecimento` ASC) ,
   CONSTRAINT `fk_andar_estabelecimento1`
     FOREIGN KEY (`estabelecimento_idestabelecimento`)
-    REFERENCES `mydb`.`estabelecimento` (`idestabelecimento`)
+    REFERENCES `estabelecimento` (`idestabelecimento`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -84,13 +82,11 @@ CREATE TABLE IF NOT EXISTS `setor` (
   `foto` MEDIUMBLOB NULL,
   `localizacao` VARCHAR(45) NULL,
   `andar_idandar` INT NOT NULL,
-  `andar_estabelecimento_idestabelecimento` INT NOT NULL,
-  PRIMARY KEY (`idsetor`, `andar_idandar`, `andar_estabelecimento_idestabelecimento`),
-  UNIQUE INDEX `idsetor_UNIQUE` (`idsetor` ASC) VISIBLE,
-  INDEX `fk_setor_andar1_idx` (`andar_idandar` ASC, `andar_estabelecimento_idestabelecimento` ASC) VISIBLE,
+  PRIMARY KEY (`idsetor`),
+  INDEX `fk_setor_andar1_idx` (`andar_idandar` ASC) ,
   CONSTRAINT `fk_setor_andar1`
-    FOREIGN KEY (`andar_idandar` , `andar_estabelecimento_idestabelecimento`)
-    REFERENCES `mydb`.`andar` (`idandar` , `estabelecimento_idestabelecimento`)
+    FOREIGN KEY (`andar_idandar`)
+    REFERENCES `andar` (`idandar`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -124,13 +120,11 @@ CREATE TABLE IF NOT EXISTS `sensor` (
   `idsensor` INT UNSIGNED NOT NULL,
   `nome` VARCHAR(30) NOT NULL,
   `setor_idsetor` INT NOT NULL,
-  `setor_andar_idandar` INT NOT NULL,
-  `setor_andar_estabelecimento_idestabelecimento` INT NOT NULL,
-  PRIMARY KEY (`idsensor`, `setor_idsetor`, `setor_andar_idandar`, `setor_andar_estabelecimento_idestabelecimento`),
-  INDEX `fk_sensor_setor1_idx` (`setor_idsetor` ASC, `setor_andar_idandar` ASC, `setor_andar_estabelecimento_idestabelecimento` ASC) VISIBLE,
+  PRIMARY KEY (`idsensor`),
+  INDEX `fk_sensor_setor1_idx` (`setor_idsetor` ASC),
   CONSTRAINT `fk_sensor_setor1`
-    FOREIGN KEY (`setor_idsetor` , `setor_andar_idandar` , `setor_andar_estabelecimento_idestabelecimento`)
-    REFERENCES `mydb`.`setor` (`idsetor` , `andar_idandar` , `andar_estabelecimento_idestabelecimento`)
+    FOREIGN KEY (`setor_idsetor`)
+    REFERENCES `setor` (`idsetor`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -144,14 +138,11 @@ CREATE TABLE IF NOT EXISTS `leitor` (
   `ruido` FLOAT NOT NULL,
   `horasensor` DATETIME NOT NULL,
   `sensor_idsensor` INT UNSIGNED NOT NULL,
-  `sensor_setor_idsetor` INT NOT NULL,
-  `sensor_setor_andar_idandar` INT NOT NULL,
-  `sensor_setor_andar_estabelecimento_idestabelecimento` INT NOT NULL,
-  PRIMARY KEY (`idleitor`, `sensor_idsensor`, `sensor_setor_idsetor`, `sensor_setor_andar_idandar`, `sensor_setor_andar_estabelecimento_idestabelecimento`),
-  INDEX `fk_leitor_sensor1_idx` (`sensor_idsensor` ASC, `sensor_setor_idsetor` ASC, `sensor_setor_andar_idandar` ASC, `sensor_setor_andar_estabelecimento_idestabelecimento` ASC) VISIBLE,
+  PRIMARY KEY (`idleitor`),
+  INDEX `fk_leitor_sensor1_idx` (`sensor_idsensor` ASC) ,
   CONSTRAINT `fk_leitor_sensor1`
-    FOREIGN KEY (`sensor_idsensor` , `sensor_setor_idsetor` , `sensor_setor_andar_idandar` , `sensor_setor_andar_estabelecimento_idestabelecimento`)
-    REFERENCES `mydb`.`sensor` (`idsensor` , `setor_idsetor` , `setor_andar_idandar` , `setor_andar_estabelecimento_idestabelecimento`)
+    FOREIGN KEY (`sensor_idsensor`)
+    REFERENCES `sensor` (`idsensor`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;

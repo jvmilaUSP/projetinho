@@ -64,6 +64,9 @@ if (!$conn) {
                 
                 <div class="formLinha"><label for="nome"  >Nome: </label><input type="text" name="nome" required id="nome" size=90></div> <br> <!-- NOME DO SERVIÇO  E SEU INPUT -->
                 <div class="botoes" >  
+                  <?php 
+                  echo "<input type='hidden' name='nomeShopping' value='"  ;
+                  ?>
                     
                     <button type="submit" href="/">Cadastar </button>
                 </div> 

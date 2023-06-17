@@ -8,7 +8,7 @@ if(isset($_POST['nome']) && isset($_POST['cpf']) && isset($_POST['endereco']) &&
     $tel   = $_POST['tel'];
 
 
-
+    
     // Insere os dados no banco de dados
     $sql = "INSERT INTO estabelecimento (nome, cpf, endereco, cnpj, tel) VALUES ('$nome', '$cpf', '$endereco', $cnpj, '$tel')";
     
