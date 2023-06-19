@@ -1,3 +1,18 @@
+<?php 
+$servername = "localhost"; // nome do servidor (geralmente localhost)
+$username = "root"; // nome de usuário do banco de dados
+$password = ""; // senha do banco de dados
+$dbname = "bd"; // nome do banco de dados
+session_start();
+
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+
+
+// Verificar conexão
+if (!$conn) {
+    die("Falha na conexão: " . mysqli_connect_error());
+}
+?>
 <!DOCTYPE html>
 <html lang="PT-BR">
 <head >
@@ -49,7 +64,7 @@
                 <img src="jalotou.jpg"  height="100%"  >
               </div>          
               <div id="navPrincipal" class="navP"> <!-- Barra Ativa-->
-                <a class="home" href="navegar.html">Home</a> <!-- Botão Home Permanente-->
+                <a class="home" href="navegarcliente.html">Home</a> <!-- Botão Home Permanente-->
                 <div class="navEsquerda" ><div class="buscaGeral"><form method="POST" name="buscaShopping" enctype="multipart/form-data"> <input type="search" id="buscaGeral" name="buscaGeral" class="inputBuscaGeral" placeholder="Buscar shopping..."/> </form> </div>
                 <a class="home" href="menuPrincipal.php">Sair</a></div>
               </div>
@@ -85,13 +100,13 @@
                         
                         
                        <div class="blocorestaurante">
-                        <h1 class="restaurante"  > <a href="viewRestaurante.html" class="titleRestaurante" >Página Inicial </a>  </h1>
+                        <h1 class="restaurante"  > <a href="index.php" class="titleRestaurante" >Página Inicial </a>  </h1>
                         </div>
                         <div class="blocorestaurante">
-                            <h1 class="restaurante"  > <a href="viewRestaurante.html" class="titleRestaurante" >Cadastrar estabelecimento </a>  </h1>
+                            <h1 class="restaurante"  > <a href="visualizarAndar.php" class="titleRestaurante" >Tabela de Andares </a>  </h1>
                             </div>
                             <div class="blocorestaurante">
-                                <h1 class="restaurante"  > <a href="viewRestaurante.html" class="titleRestaurante" >Cadastrar Cliente </a>  </h1>
+                                <h1 class="restaurante"  > <a href="visualizarLojas.php" class="titleRestaurante" >Tabela de Restaurantes </a>  </h1>
                                 </div>
                        </div>
 

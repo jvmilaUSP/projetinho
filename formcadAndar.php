@@ -1,14 +1,18 @@
 <?php
 // Verifica se os campos foram enviados
+session_start();
 if(isset($_POST['nome'])) {
     $nome = $_POST['nome'];
+
+
     
 
 
 
     // Insere os dados no banco de dados
-    $sql = "INSERT INTO andar (nome) VALUES ('$nome')";
-    
+    $id = $_SESSION['id'];
+    $sql = "INSERT INTO andar (nome, estabelecimento_idestabelecimento) VALUES ('$nome', '$id')";
+        
     if (mysqli_query($conn, $sql)) {
         echo "Dados inseridos com sucesso!";
     } else {

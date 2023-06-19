@@ -3,8 +3,10 @@ $servername = "localhost"; // nome do servidor (geralmente localhost)
 $username = "root"; // nome de usuário do banco de dados
 $password = ""; // senha do banco de dados
 $dbname = "bd"; // nome do banco de dados
+session_start();
 
 $conn = mysqli_connect($servername, $username, $password, $dbname);
+
 
 // Verificar conexão
 if (!$conn) {

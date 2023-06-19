@@ -20,14 +20,22 @@ USE jalotou;
 -- Table `mydb`.`estabelecimento`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `estabelecimento` (
-  `idestabelecimento` INT NOT NULL AUTO_INCREMENT,
+  `idestabelecimento` INT NOT NULL,
   `nome` VARCHAR(90) NOT NULL,
   `endereco` VARCHAR(100) NOT NULL,
   `cnpj` VARCHAR(30) NOT NULL,
   `tel` VARCHAR(20) NOT NULL,
+  `estabelecimento_idestabelecimento` INT,
   PRIMARY KEY (`idestabelecimento`),
-  UNIQUE INDEX `idestabelecimento_UNIQUE` (`idestabelecimento` ASC) )
-ENGINE = InnoDB;
+  UNIQUE INDEX `idestabelecimento_UNIQUE` (`idestabelecimento` ASC),
+  INDEX `fk_usuario_estabelecimento_idx` (`estabelecimento_idestabelecimento` ASC),
+  CONSTRAINT `fk_usuario_estabelecimento`
+    FOREIGN KEY (`estabelecimento_idestabelecimento`)
+    REFERENCES `usuario` (`idusuario`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION
+) ENGINE = InnoDB;
+
 
 
 -- -----------------------------------------------------
@@ -40,17 +48,11 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `nome` VARCHAR(90) NOT NULL,
   `tel` VARCHAR(20),
   `cpf` VARCHAR(20) NOT NULL,
-  `estabelecimento_idestabelecimento` INT,
   PRIMARY KEY (`idusuario`),
   UNIQUE INDEX `idusuario_UNIQUE` (`idusuario` ASC),
-  UNIQUE INDEX `login_UNIQUE` (`login` ASC),
-  INDEX `fk_usuario_estabelecimento_idx` (`estabelecimento_idestabelecimento` ASC),
-  CONSTRAINT `fk_usuario_estabelecimento`
-    FOREIGN KEY (`estabelecimento_idestabelecimento`)
-    REFERENCES `estabelecimento` (`idestabelecimento`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+  UNIQUE INDEX `login_UNIQUE` (`login` ASC)
+) ENGINE = InnoDB;
+
 
 
 -- -----------------------------------------------------
@@ -78,15 +80,30 @@ CREATE TABLE IF NOT EXISTS `setor` (
   `nome` VARCHAR(45) NOT NULL,
   `descricao` VARCHAR(80) NULL,
   `link` VARCHAR(80) NULL,
-  `indice` FLOAT NOT NULL,
+  `indice` FLOAT NULL,
   `foto` MEDIUMBLOB NULL,
-  `localizacao` VARCHAR(45) NULL,
   `andar_idandar` INT NOT NULL,
   PRIMARY KEY (`idsetor`),
   INDEX `fk_setor_andar1_idx` (`andar_idandar` ASC) ,
   CONSTRAINT `fk_setor_andar1`
     FOREIGN KEY (`andar_idandar`)
     REFERENCES `andar` (`idandar`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+CREATE TABLE IF NOT EXISTS `horario` (
+  `idhora` INT NOT NULL AUTO_INCREMENT,
+  `horainicial` DATETIME() NOT NULL,
+  `horafinal` DATETIME() NULL,
+  `dia` VARCHAR(80) NULL,
+  'idsetor' INT NOT NULL,
+
+  PRIMARY KEY (`idhora`),
+  INDEX `fk_setor_hora_idx` (`idsetor` ASC) ,
+  CONSTRAINT `fk_setor_andar1`
+    FOREIGN KEY (`idsetor`)
+    REFERENCES `setor` (`idsetor`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;

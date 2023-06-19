@@ -3,7 +3,7 @@ $servername = "localhost"; // nome do servidor (geralmente localhost)
 $username = "root"; // nome de usuário do banco de dados
 $password = ""; // senha do banco de dados
 $dbname = "bd"; // nome do banco de dados
-
+session_start();
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 
 // Verificar conexão
@@ -65,6 +65,16 @@ if (!$conn) {
               <div  class="formulario">
                 <div class="formLinha"><label for="andar"  >Andar: </label><select id="andarSelect" name="andarSelect" class="selectcad" > 
                     <option value="0">Selecione o andar</option>
+                    <?php
+                    $sql = "SELECT * FROM estabelecimento";
+                    $result = mysqli_query($conn, $sql);
+                    while ($row = mysqli_fetch_assoc($result)) {
+                      echo "<div class='blocoShopping'>";
+                      echo "<h1 class='restaurante'> <a href='index/" . $row['idestabelecimento'] . ".php' class='titleRestaurante>" . $row['nome'] ."</a>  </h1>"; 
+                      echo "div class='divdesc'> <p>" . $row['endereco'] . "</p> </div>";
+                      echo "</div>";
+                  }
+                    ?>
                     <option value="1andar">1 Andar</option>
                     <option value="2andar">2 Andar</option>
                     <option value="3andar">3 Andar</option>

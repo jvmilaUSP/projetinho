@@ -86,6 +86,16 @@ if (!$conn) {
                    <div class="divBuscaLinha">  
                     <select id="andarSelect" name="andarSelect" class="select" > 
                       <option value="0">Selecione o andar</option>
+                      <?php 
+                      $sql = "SELECT * FROM andar WHERE ";
+                      $result = mysqli_query($conn, $sql);
+                      while ($row = mysqli_fetch_assoc($result)) {
+                        echo "<option'>".$row['nome'];
+                        echo "<h1 class='restaurante'> <a href='index/" . $row['idestabelecimento'] . ".php' class='titleRestaurante>" . $row['nome'] ."</a>  </h1>"; 
+                        echo "div class='divdesc'> <p>" . $row['endereco'] . "</p> </div>";
+                        echo "</div>";
+                    }
+                      ?>
                       <option value="1andar">1 Andar</option>
                       <option value="2andar">2 Andar</option>
                       <option value="3andar">3 Andar</option>

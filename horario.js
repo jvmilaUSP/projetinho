@@ -28,18 +28,18 @@ function adicionarHorario() {
 
     //INSERIR OS INPUT
     var hiddenPalavraChave = document.createElement('input');
-    hiddenPalavraChave.type = 'hidden';
-    hiddenPalavraChave.name = 'hiddenPalavraChave' + contadorHidden;
+    hiddenPalavraChave.type = 'text';
+    hiddenPalavraChave.name = 'hiddendiaSemana';
     hiddenPalavraChave.value = palavraChave;
 
     var hiddenHorarioInicio = document.createElement('input');
-    hiddenHorarioInicio.type = 'hidden';
-    hiddenHorarioInicio.name = 'hiddenHorarioInicio' + contadorHidden;
+    hiddenHorarioInicio.type = 'text';
+    hiddenHorarioInicio.name = 'hiddenHorarioInicio';
     hiddenHorarioInicio.value = horarioInicio;
 
     var hiddenHorarioFim = document.createElement('input');
-    hiddenHorarioFim.type = 'hidden';
-    hiddenHorarioFim.name = 'hiddenHorarioFim' + contadorHidden;
+    hiddenHorarioFim.type = 'text';
+    hiddenHorarioFim.name = 'hiddenHorarioFim';
     hiddenHorarioFim.value = horarioFim;
 
     var celulaExcluir = linha.insertCell(3);
