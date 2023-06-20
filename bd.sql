@@ -93,21 +93,7 @@ CREATE TABLE IF NOT EXISTS `setor` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-CREATE TABLE IF NOT EXISTS `horario` (
-  `idhora` INT NOT NULL AUTO_INCREMENT,
-  `horainicial` DATETIME() NOT NULL,
-  `horafinal` DATETIME() NULL,
-  `dia` VARCHAR(80) NULL,
-  'idsetor' INT NOT NULL,
 
-  PRIMARY KEY (`idhora`),
-  INDEX `fk_setor_hora_idx` (`idsetor` ASC) ,
-  CONSTRAINT `fk_setor_andar1`
-    FOREIGN KEY (`idsetor`)
-    REFERENCES `setor` (`idsetor`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
@@ -124,11 +110,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `mydb`.`categoria`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `categoria` (
-  `idcategoria` INT UNSIGNED NOT NULL,
-  `nome` VARCHAR(45) NOT NULL,
-  PRIMARY KEY (`idcategoria`))
-ENGINE = InnoDB;
+
 
 
 -- -----------------------------------------------------
