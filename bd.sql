@@ -15,6 +15,17 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,N
 DROP DATABASE IF EXISTS jalotou; 
 CREATE DATABASE jalotou;
 USE jalotou;
+CREATE TABLE IF NOT EXISTS `usuario` (
+  `idusuario` INT NOT NULL AUTO_INCREMENT,
+  `login` VARCHAR(45) NOT NULL,
+  `senha` VARCHAR(45) NOT NULL,
+  `nome` VARCHAR(90) NOT NULL,
+  `tel` VARCHAR(20),
+  `cpf` VARCHAR(20) NOT NULL,
+  PRIMARY KEY (`idusuario`),
+  UNIQUE INDEX `idusuario_UNIQUE` (`idusuario` ASC),
+  UNIQUE INDEX `login_UNIQUE` (`login` ASC)
+) ENGINE = InnoDB;
 
 -- -----------------------------------------------------
 -- Table `mydb`.`estabelecimento`
@@ -41,17 +52,7 @@ CREATE TABLE IF NOT EXISTS `estabelecimento` (
 -- -----------------------------------------------------
 -- Table `mydb`.`usuario`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `usuario` (
-  `idusuario` INT NOT NULL AUTO_INCREMENT,
-  `login` VARCHAR(45) NOT NULL,
-  `senha` VARCHAR(45) NOT NULL,
-  `nome` VARCHAR(90) NOT NULL,
-  `tel` VARCHAR(20),
-  `cpf` VARCHAR(20) NOT NULL,
-  PRIMARY KEY (`idusuario`),
-  UNIQUE INDEX `idusuario_UNIQUE` (`idusuario` ASC),
-  UNIQUE INDEX `login_UNIQUE` (`login` ASC)
-) ENGINE = InnoDB;
+
 
 
 
