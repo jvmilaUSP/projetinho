@@ -80,7 +80,8 @@ CREATE TABLE IF NOT EXISTS `setor` (
   `idsetor` INT NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(45) NOT NULL,
   `descricao` VARCHAR(80) NULL,
-  `link` VARCHAR(80) NULL,
+  `palavrachave` VARCHAR(80) NULL,
+  `link` VARCHAR(200) NULL,
   `indice` FLOAT NULL,
   `foto` MEDIUMBLOB NULL,
   `andar_idandar` INT NOT NULL,
@@ -100,7 +101,7 @@ ENGINE = InnoDB;
 -- Table `mydb`.`adm`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `adm` (
-  `idadm` INT UNSIGNED NOT NULL,
+  `idadm` INT  NOT NULL AUTO_INCREMENT,
   `login` VARCHAR(45) NOT NULL,
   `senha` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`idadm`))
@@ -117,7 +118,7 @@ ENGINE = InnoDB;
 -- Table `mydb`.`sensor`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `sensor` (
-  `idsensor` INT UNSIGNED NOT NULL,
+  `idsensor` INT  NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(30) NOT NULL,
   `setor_idsetor` INT NOT NULL,
   PRIMARY KEY (`idsensor`),
@@ -134,10 +135,10 @@ ENGINE = InnoDB;
 -- Table `mydb`.`leitor`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `leitor` (
-  `idleitor` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `idleitor` INT  NOT NULL AUTO_INCREMENT,
   `ruido` FLOAT NOT NULL,
   `horasensor` DATETIME NOT NULL,
-  `sensor_idsensor` INT UNSIGNED NOT NULL,
+  `sensor_idsensor` INT  NOT NULL,
   PRIMARY KEY (`idleitor`),
   INDEX `fk_leitor_sensor1_idx` (`sensor_idsensor` ASC) ,
   CONSTRAINT `fk_leitor_sensor1`

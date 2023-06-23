@@ -65,50 +65,46 @@ if (!$conn) {
               <div  class="formulario">
                 <div class="formLinha"><label for="andar"  >Andar: </label><select id="andarSelect" name="andarSelect" class="selectcad" > 
                     <option value="0">Selecione o andar</option>
-                    <?php
-                    $sql = "SELECT * FROM estabelecimento";
-                    $result = mysqli_query($conn, $sql);
-                    while ($row = mysqli_fetch_assoc($result)) {
-                      echo "<div class='blocoShopping'>";
-                      echo "<h1 class='restaurante'> <a href='index/" . $row['idestabelecimento'] . ".php' class='titleRestaurante>" . $row['nome'] ."</a>  </h1>"; 
-                      echo "div class='divdesc'> <p>" . $row['endereco'] . "</p> </div>";
-                      echo "</div>";
-                  }
-                    ?>
-                    <option value="1andar">1 Andar</option>
+                    <?php 
+                    $id = $_SESSION['id'];
+                      $sql = "SELECT * FROM andar WHERE estabelecimento_idestabelecimento = $id";
+                      $result = mysqli_query($conn, $sql);
+                      while ($row = mysqli_fetch_assoc($result)) {
+                        echo "<option value='".$row['idandar']."'>".$row['nome']."</option>";
+                    }
+                      ?>
+                   <!--  <option value="1andar">1 Andar</option>
                     <option value="2andar">2 Andar</option>
-                    <option value="3andar">3 Andar</option>
+                    <option value="3andar">3 Andar</option> -->
                 </select></div>
                   <!-- NOME DO SERVIÇO  E SEU INPUT -->
                 <div class="formLinha"><label for="nomeRestaurante"  >Nome do Restaurante: </label><input type="text" name="nomeRestaurante" required id="nomeRestaurante" size=90></div>  <!-- NOME DO SERVIÇO  E SEU INPUT -->
                 <div class="formLinha"><label for="foto">Foto:</label><input id="foto" type="file" name="foto"       ></div>
                 <div class="formLinha"><label for="palavrachave"  >Palavras-chave: </label> <select id="palavrachaveSelect" name="palavrachaveSelect" class="selectcad" > 
                   <option value="0">Selecione</option>
-                  <option value="pizza">Pizza</option>
-                  <option value="hamburguer">hamburguer</option>
-                  <option value="cerveja">Cerveja</option>
-                  <option value="cafe">Cafeteria</option>
-                  <option value="churrasco">Churrasco</option>
-                  <option value="italiana">Comida Italiana</option>
-                  <option value="japones">Japonês</option>
-                  <option value="chines">Chinês</option>
-                  <option value="italiano">Italiano</option>
-                  <option value="frances">Francês</option>
-                  <option value="vegetariano">Vegetariano</option>
-                  <option value="vegano">Vegano</option>
-                  <option value="indiano">Indiano</option>
-                  <option value="sushi">Sushi</option>
-                  <option value="bar">Bar</option>
-                  <option value="padaria">Padaria</option>
-                  <option value="cafeteria">Cafeteria</option>
-                  <option value="buffet">Buffet</option>
-                  
-                  <option value="peixes_frutos_mar">Peixes e Frutos do Mar</option>
+                  <option value="Pizza">Pizza</option>
+                  <option value="Hambúrguer">hamburguer</option>
+                  <option value="Cerveja">Cerveja</option>
+                  <option value="Café">Cafeteria</option>
+                  <option value="Churrasco">Churrasco</option>
+                  <option value="Italiana">Comida Italiana</option>
+                  <option value="Japonês">Japonês</option>
+                  <option value="Chinês">Chinês</option>
+                  <option value="Italiano">Italiano</option>
+                  <option value="Francês">Francês</option>
+                  <option value="Vegetariano">Vegetariano</option>
+                  <option value="Vegano">Vegano</option>
+                  <option value="Indiano">Indiano</option>
+                  <option value="Sushi">Sushi</option>
+                  <option value="Bar">Bar</option>
+                  <option value="Padaria">Padaria</option>
+                  <option value="Buffet">Buffet</option>
+                  <option value="Peixes e Frutos do Mar">Peixes e Frutos do Mar</option>
               </select> </div>
                 <div class="formLinha"><label for="foto">Descrição:</label></div>
                 <div class="formLinha"><textarea id="descricao" name="descricao" rows="7" cols="45" ></textarea></div> 
                 <div class="formLinha"><label for="linkcardapio"  >Link do Cardápio: </label><input type="text" name="linkcardapio" required id="linkcardapio" size="45"></div> 
-                <div class="formLinha"><label for="palavrachave"  >Dia da semana: </label> <select id="diaSemanaSelect" name="diaSemanaSelect" class="selectcad" > 
+               <!-- <div class="formLinha"><label for="palavrachave"  >Dia da semana: </label> <select id="diaSemanaSelect" name="diaSemanaSelect" class="selectcad" > 
                   <option value="0">Selecione</option>
                   <option value="seg">Segunda</option>
                   <option value="ter">Terça</option>
@@ -125,7 +121,7 @@ if (!$conn) {
                 <table id="tabelaHorarios" class="tabelaHorarios">
                   <tr> <th class="dia">Dia</th> <th>Horário Abertura </th> <th>Horário Fechamento</th> <th>Excluir</th>  </tr> 
                   <tr>  </tr>
-                </table>
+                </table> -->
                 <div class="botoes" >  
                     
                     <button type="submit" href="/">Cadastar </button>

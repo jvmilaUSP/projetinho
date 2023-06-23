@@ -9,7 +9,10 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
 // Verificar conexão
 if (!$conn) {
     die("Falha na conexão: " . mysqli_connect_error());
+
+  
 }
+$id = $_GET['id'];
 ?>
 <!DOCTYPE html>
 <html lang="PT-BR">
@@ -71,8 +74,16 @@ if (!$conn) {
         <!-- /Estrutura da Nav -->
 
     <div id="cad" class="cad">
-        
-            <div class="tituloPag"><h1>Shopping Butantã - restaurantes</h1>  </div>
+    <?php 
+                      $sql = "SELECT * FROM estabelecimento WHERE idestabelecimento = $id";
+                      $result = mysqli_query($conn, $sql);
+                      while ($row = mysqli_fetch_assoc($result)) {
+                        echo "<option'>".$row['nome'];
+                        echo "<div class='tituloPag'><h1>".$row['nome']." - restaurantes</h1>  </div>"; 
+                    
+                    }
+                      ?>
+            <!-- <div class="tituloPag"><h1>Shopping Butantã - restaurantes</h1>  </div> -->
             
               
               
@@ -87,18 +98,15 @@ if (!$conn) {
                     <select id="andarSelect" name="andarSelect" class="select" > 
                       <option value="0">Selecione o andar</option>
                       <?php 
-                      $sql = "SELECT * FROM andar WHERE ";
+                      $sql = "SELECT * FROM andar WHERE estabelecimento_idestabelecimento = $id";
                       $result = mysqli_query($conn, $sql);
                       while ($row = mysqli_fetch_assoc($result)) {
-                        echo "<option'>".$row['nome'];
-                        echo "<h1 class='restaurante'> <a href='index/" . $row['idestabelecimento'] . ".php' class='titleRestaurante>" . $row['nome'] ."</a>  </h1>"; 
-                        echo "div class='divdesc'> <p>" . $row['endereco'] . "</p> </div>";
-                        echo "</div>";
+                        echo "<option value='".$row['idandar']."'>".$row['nome']."</option>";
                     }
                       ?>
-                      <option value="1andar">1 Andar</option>
+                      <!-- <option value="1andar">1 Andar</option> 
                       <option value="2andar">2 Andar</option>
-                      <option value="3andar">3 Andar</option>
+                      <option value="3andar">3 Andar</option> -->
                   </select>
                            
                         <div class="divBusca">
@@ -109,7 +117,7 @@ if (!$conn) {
                     </div>
 
                     <div class="subtitulo">
-                      <h3>Última atualização: 19:31</h3> 
+
                       <h5>O sistema atualiza a cada 5 minutos.</h5>
                       <h5>Este número a direita de cada estabelecimento é o índice de lotação que varia de 0 a 10, quanto maior, mais lotado.</h5>
 
@@ -117,13 +125,37 @@ if (!$conn) {
 
                     
                     
+                    <?php 
+                      $sql = "SELECT * FROM andar WHERE estabelecimento_idestabelecimento = $id";
+                      $result = mysqli_query($conn, $sql);
+                      while ($row = mysqli_fetch_assoc($result)) {
+                        echo "<div id='".$row['idandar']."' class='andar'>";
+                        echo "<h2>".$row['nome']. "</h2>";
+                        echo"<fieldset> ";
+                        $idandarvariavel = $row['idandar'];
 
+                        $sql2 = "SELECT * FROM setor WHERE andar_idandar = $idandarvariavel";
+                        $result2 = mysqli_query($conn, $sql);
+                        while ($row2 = mysqli_fetch_assoc($result2)) {
+                          echo "<div class='blocorestaurante'>";
+                          echo "<h1 class='restaurante'  > <a href='viewRestaurante.php?idrestaurante='".$row2['idsetor']. "' class='titleRestaurante' >".$row2['nome'] ."</a>  </h1>";
+                          echo"<h1 class='indice numero'>".$row2['indice']."</h1> ";
+                          echo "<div class='divdesc'><p>".$row2['palavrachave']."</p>  </div>";
+                          echo "<div class='divmenu'><a href='".$row2['link'] ."' >Cardápio Digital</a></div>";
+                        }
+
+                        echo "</fieldset> </div>";
+
+
+
+                    }
+                      ?>
 
                     
-                       <br>
-                       <div id="1andar" class="andar"> 
+                       
+                       <!-- <div id="1andar" class="andar"> 
                        <h2>1 Andar</h2> 
-                       <fieldset> 
+                       <fieldset> -->
                         
                        <div class="blocorestaurante">
                         <h1 class="restaurante"  > <a href="viewRestaurante.html" class="titleRestaurante" >Outback </a>  </h1>

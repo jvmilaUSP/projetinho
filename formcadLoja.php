@@ -26,7 +26,7 @@ if(1 == 1) {
 
 
     
-if(isset($_POST['hiddendiaSemana'])) {
+/*if(isset($_POST['hiddendiaSemana'])) {
     $diasemanas = $_POST['hiddendiaSemana'];
     $horarioInicio = $_POST['hiddenHorarioInicio'];
     $horarioFim = $_POST['hiddenHorarioFim'];
@@ -36,9 +36,9 @@ $resultado = array_map(null, $diasemanas, $horarioInicio,$horarioFim);
 
 foreach ($resultado as [$dia, $inicio, $fim]) {
     $sql = "INSERT INTO horario (horainicial, horafinal, dia, idsetor) VALUES ('$inicio', '$fim', '$dia', $ultimoID)";
-}
+} 
 
-}
+} */
 mysqli_close($conn);
 ?>
 
