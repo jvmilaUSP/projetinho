@@ -11,6 +11,7 @@ if ($result) {
     $_SESSION['id'] = $row['idadm'];
     $_SESSION['tipo'] = 'adm';
     $existelogin = 1;
+    header("Location: navegar.php"); // Redireciona para a página de login
 }
 
 else{
@@ -22,6 +23,7 @@ else{
         $_SESSION['id'] = $row['idusuario'];
         $_SESSION['tipo'] = 'usuario';
         $existelogin = 1;
+        header("Location: navegarcliente.php"); // Redireciona para a página de login
         
     }
 

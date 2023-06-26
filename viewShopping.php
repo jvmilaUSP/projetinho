@@ -47,7 +47,7 @@ if (!$conn) {
               <img src="jalotou.jpg"  height="100%"  >
             </div>          
             <div id="navPrincipal" class="navP"> <!-- Barra Ativa-->
-              <a class="home" href="index.html">Home</a> <!-- Botão Home Permanente-->
+              <a class="home" href="viewShopping.php">Home</a> <!-- Botão Home Permanente-->
               <div class="navEsquerda" ><div class="buscaGeral"><form method="POST" name="buscaShopping" enctype="multipart/form-data"> <input type="search" id="buscaGeral" name="buscaGeral" class="inputBuscaGeral" placeholder="Buscar shopping..."/> </form> </div>
               <a class="home" href="menuPrincipal.php">Sair</a></div>
             </div>
