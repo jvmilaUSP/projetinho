@@ -1,0 +1,50 @@
+.tabela{
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    flex-wrap: wrap;
+    
+}
+.iconeTabela{
+    width: 100%;
+    height: 30px;
+    justify-content: left;
+}
+.tabelaControle{
+    width: 100%;
+    border: 2px solid black;
+}
+.tabelaControle >tr,th,td{
+    height: 30px;
+}
+th{
+    background-color: #006494;
+    color: #E8F1F2;
+}
+td{
+    color: black;
+    text-align: center;
+    border-right: 1px solid black;
+    
+}
+.excluir{
+    width: 20%;
+}
+.tabelaRestaurante{
+    width: 50%;
+}
+.tituloAndar{
+    width: 80%;
+}
+.tabelaMaiorAndar{
+    width: 60%;
+    border: 2px solid black;
+}
+.tabelaHorarios{
+    width: 60%;
+    border: 2px solid black;
+}
+.dia{
+    width: 20%;
+}
