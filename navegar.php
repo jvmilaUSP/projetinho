@@ -2,7 +2,7 @@
 $servername = "localhost"; // nome do servidor (geralmente localhost)
 $username = "root"; // nome de usuário do banco de dados
 $password = ""; // senha do banco de dados
-$dbname = "bd"; // nome do banco de dados
+$dbname = "jalotou"; // nome do banco de dados
 session_start();
 
 $conn = mysqli_connect($servername, $username, $password, $dbname);
@@ -100,13 +100,13 @@ if (!$conn) {
                         
                         
                        <div class="blocorestaurante">
-                        <h1 class="restaurante"  > <a href="viewRestaurante.html" class="titleRestaurante" >Página Inicial </a>  </h1>
+                        <h1 class="restaurante"  > <a href="viewShopping.php" class="titleRestaurante" >Página Inicial </a>  </h1>
                         </div>
                         <div class="blocorestaurante">
-                            <h1 class="restaurante"  > <a href="viewRestaurante.html" class="titleRestaurante" >Cadastrar estabelecimento </a>  </h1>
+                            <h1 class="restaurante"  > <a href="cadastroEstabelecimento.php" class="titleRestaurante" >Cadastrar estabelecimento </a>  </h1>
                             </div>
                             <div class="blocorestaurante">
-                                <h1 class="restaurante"  > <a href="viewRestaurante.html" class="titleRestaurante" >Cadastrar Cliente </a>  </h1>
+                                <h1 class="restaurante"  > <a href="visualizarAndar.php" class="titleRestaurante" >Cadastrar Cliente </a>  </h1>
                                 </div>
                        </div>
 

@@ -2,7 +2,7 @@
 $servername = "localhost"; // nome do servidor (geralmente localhost)
 $username = "root"; // nome de usuário do banco de dados
 $password = ""; // senha do banco de dados
-$dbname = "bd"; // nome do banco de dados
+$dbname = "jalotou"; // nome do banco de dados
 
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 
@@ -12,7 +12,10 @@ if (!$conn) {
 
   
 }
-$id = $_GET['id'];
+$id = 1;
+if(isset($_GET['id'])){
+    $id = $_GET['id'];
+}
 ?>
 <!DOCTYPE html>
 <html lang="PT-BR">
@@ -79,7 +82,7 @@ $id = $_GET['id'];
                       $result = mysqli_query($conn, $sql);
                       while ($row = mysqli_fetch_assoc($result)) {
                         echo "<option'>".$row['nome'];
-                        echo "<div class='tituloPag'><h1>".$row['nome']." - restaurantes</h1>  </div>"; 
+                        echo "<div class='tituloPag'><h1>".$row['nome']."</h1>  </div>"; 
                     
                     }
                       ?>
@@ -135,14 +138,14 @@ $id = $_GET['id'];
                         $idandarvariavel = $row['idandar'];
 
                         $sql2 = "SELECT * FROM setor WHERE andar_idandar = $idandarvariavel";
-                        $result2 = mysqli_query($conn, $sql);
+                        $result2 = mysqli_query($conn, $sql2);
                         while ($row2 = mysqli_fetch_assoc($result2)) {
                           echo "<div class='blocorestaurante'>";
                           echo "<h1 class='restaurante'  > <a href='viewRestaurante.php?idrestaurante='".$row2['idsetor']. "' class='titleRestaurante' >".$row2['nome'] ."</a>  </h1>";
                           echo"<h1 class='indice numero'>".$row2['indice']."</h1> ";
-                          echo "<div class='divdesc'><p>".$row2['palavrachave']."</p>  </div>";
-                          echo "<div class='divmenu'><a href='".$row2['link'] ."' >Cardápio Digital</a></div>";
-                        }
+                          #echo "<div class='divdesc'><p>".$row2['palavrachave']."</p>  </div>";
+                          echo "<div class='divmenu'><a href='http://".$row2['link'] ."' >Cardápio Digital</a></div>";
+                        }  
 
                         echo "</fieldset> </div>";
 
@@ -156,7 +159,7 @@ $id = $_GET['id'];
                        <!-- <div id="1andar" class="andar"> 
                        <h2>1 Andar</h2> 
                        <fieldset> -->
-                        
+                      <!--  
                        <div class="blocorestaurante">
                         <h1 class="restaurante"  > <a href="viewRestaurante.html" class="titleRestaurante" >Outback </a>  </h1>
                         <h1 class="indice numero" >5.4</h1>
@@ -184,9 +187,10 @@ $id = $_GET['id'];
                             
                             
                             </div>
-                      </fieldset> </div>
+                      </fieldset> </div> -->
 
                       <!--  2 ANDAR-->
+                      <!--
                       <div id="2andar" class="andar"> 
                       <div class="inp"><h2>2 Andar</h2> </div>
                        <fieldset> 
@@ -218,7 +222,7 @@ $id = $_GET['id'];
                             
                             
                             </div>
-                      </fieldset> </div>
+                      </fieldset> </div> -->
                       
             
             

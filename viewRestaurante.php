@@ -2,7 +2,7 @@
 $servername = "localhost"; // nome do servidor (geralmente localhost)
 $username = "root"; // nome de usuário do banco de dados
 $password = ""; // senha do banco de dados
-$dbname = "bd"; // nome do banco de dados
+$dbname = "jalotou"; // nome do banco de dados
 
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 
@@ -10,7 +10,11 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
 if (!$conn) {
     die("Falha na conexão: " . mysqli_connect_error());
 }
-$idrestaurante = $_GET['id'];
+$idrestaurante = 1;
+if (isset($_GET['idrestaurante'])){
+  $idrestaurante = $_GET['idrestaurante'];
+
+}
 ?>
 <!DOCTYPE html>
 <html lang="PT-BR">
@@ -89,7 +93,7 @@ $idrestaurante = $_GET['id'];
                       $sql = "SELECT * FROM setor WHERE idsetor = $idrestaurante";
                       $result = mysqli_query($conn, $sql);
                       while ($row = mysqli_fetch_assoc($result)) {
-                        echo "<h4>Palavras chave: ".$row["palavrachave"] ."</h4>";
+                        #echo "<h4>Palavras chave: ".$row["palavrachave"] ."</h4>";
                         echo "<p>Descricao: ".$row["descricao"] ."</p>";
                         echo "<button href='". $row['link'].">Acessar Menu</button>";
 

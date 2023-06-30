@@ -4,7 +4,7 @@ session_start();
 $servername = "localhost"; // nome do servidor (geralmente localhost)
 $username = "root"; // nome de usuário do banco de dados
 $password = ""; // senha do banco de dados
-$dbname = "bd"; // nome do banco de dados
+$dbname = "jalotou"; // nome do banco de dados
 
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 if(isset($_POST['nome'])) {
